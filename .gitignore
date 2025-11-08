@@ -1,0 +1,112 @@
+
+node_modules/
+bun.lockb
+bunfig.toml
+.pnp.cjs
+.pnp.loader.mjs
+.cache/
+.cache-loader/
+.nyc_output/
+.vscode-test/
+.DS_Store
+
+# --- Build output ---
+.next/
+out/
+dist/
+build/
+.vercel/
+.vercel_build_output/
+.next-static/
+.next-cache/
+.storybook-static/
+
+# --- Logs and debugging ---
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+bun-debug.log*
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# --- Environment & secrets ---
+.env
+.env.*.local
+.env.local
+.env.development.local
+.env.production.local
+.env.test.local
+.envrc
+*.pem
+*.key
+*.cert
+
+# --- Test / Coverage ---
+coverage/
+jest.cache/
+jest-stare/
+cypress/videos/
+cypress/screenshots/
+
+# --- IDE / Editor junk ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+*.tmp
+*.temp
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+desktop.ini
+
+# --- TypeScript ---
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# --- Storybook / Docs ---
+storybook-static/
+.stylelintcache
+.lintstagedrc
+.eslintcache
+
+# --- Local data or uploads ---
+uploads/
+tmp/
+temp/
+data/
+local.db
+*.sqlite
+*.db
+*.local.json
+
+# --- Blockchain / Web3 Artifacts ---
+artifacts/
+cache/
+typechain/
+hardhat-cache/
+foundry-cache/
+*.sol.json
+*.abi
+*.bin
+*.dbg.json
+
+# --- Misc ---
+*.orig
+*.rej
+*.old
+*.log.*
+npm-error.log*
+bun-error.log*
+*.tgz
+
+# --- Ignore generated static content ---
+public/assets/generated/
+public/.cache/
