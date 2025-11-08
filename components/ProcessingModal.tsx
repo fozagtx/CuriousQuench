@@ -69,8 +69,7 @@ export default function ProcessingModal({ isOpen }: ProcessingModalProps) {
                         duration: 2,
                         repeat: Infinity,
                         ease: "easeInOut",
-                      },
-                      exit: { duration: 0.3 }
+                      }
                     }}
                     className="relative w-24 h-24"
                   >
