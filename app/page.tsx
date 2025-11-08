@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useAccount } from 'wagmi';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Particles from '@/components/ui/particles';
@@ -10,6 +12,13 @@ import AnimatedShinyText from '@/components/ui/animated-shiny-text';
 
 export default function Home() {
   const { isConnected } = useAccount();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (isConnected) {
+      router.push('/dashboard');
+    }
+  }, [isConnected, router]);
 
   return (
     <div className="max-w-6xl mx-auto px-6">

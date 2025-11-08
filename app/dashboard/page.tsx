@@ -8,6 +8,7 @@ import { RANK_NAMES } from '@/lib/calculations';
 import { formatUnits } from 'viem';
 import SubmitRecord from '@/components/SubmitRecord';
 import RewardBanner from '@/components/RewardBanner';
+import RewardListenerStatus from '@/components/RewardListenerStatus';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 export default function Dashboard() {
@@ -57,6 +58,7 @@ export default function Dashboard() {
   return (
     <div className="max-w-6xl mx-auto p-6">
       <RewardBanner />
+      <RewardListenerStatus />
 
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-8">
         Your Curious Quench Dashboard

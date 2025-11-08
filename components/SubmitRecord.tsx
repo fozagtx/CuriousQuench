@@ -6,12 +6,14 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { toast } from 'sonner';
+import ProcessingModal from './ProcessingModal';
 
 export default function SubmitRecord() {
   const { address } = useAccount();
   const [cigaretteCount, setCigaretteCount] = useState('');
   const [dailyLimit, setDailyLimit] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,6 +23,7 @@ export default function SubmitRecord() {
     }
 
     setLoading(true);
+    setShowModal(true);
 
     try {
       // Send data to the game server
@@ -37,6 +40,11 @@ export default function SubmitRecord() {
 
       const data = await response.json();
 
+      // Keep modal open for 6 seconds (5s processing + 1s success)
+      await new Promise(resolve => setTimeout(resolve, 6000));
+
+      setShowModal(false);
+
       if (data.success) {
         toast.success(data.message, {
           description: `Performance: ${data.performance}%`
@@ -46,6 +54,7 @@ export default function SubmitRecord() {
         toast.warning(data.message);
       }
     } catch (error) {
+      setShowModal(false);
       toast.error('Failed to submit record');
       console.error(error);
     } finally {
@@ -54,9 +63,16 @@ export default function SubmitRecord() {
   };
 
   return (
-    <Card className="max-w-md mx-auto">
+    <>
+      <ProcessingModal isOpen={showModal} />
+      <Card className="max-w-md mx-auto">
       <CardHeader>
         <CardTitle>Submit Daily Record</CardTitle>
+        <div className="mt-2 p-3 bg-blue-50 dark:bg-blue-950 rounded-lg border border-blue-200 dark:border-blue-800">
+          <p className="text-sm font-bold text-blue-900 dark:text-blue-100">
+            ⚠️ Rules: Be truthful to your input as it will help you fight your addiction. Let's get healthy together! 💪
+          </p>
+        </div>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -91,12 +107,13 @@ export default function SubmitRecord() {
           <Button
             type="submit"
             disabled={loading || !address}
-            className="w-full bg-blue-600 hover:bg-blue-700"
+            className="w-full"
           >
             {loading ? 'Submitting...' : 'Submit Record'}
           </Button>
         </form>
       </CardContent>
     </Card>
+    </>
   );
 }

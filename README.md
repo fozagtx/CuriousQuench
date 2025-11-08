@@ -240,6 +240,37 @@ Or visit the endpoint in your browser. The listener will continue running in the
 - `sdk.streams.sessionWrite(functionName, args)` - Execute contract functions
 - `sdk.streams.somniaView(functionName, args)` - Read contract state
 
+## How to Add QUENCH Token to Your Wallet
+
+### Token Details
+- **Token Name:** Curious Quench
+- **Symbol:** QUENCH
+- **Contract Address:** `0x9f73cb87a43deae721cbf69cfb8a356e2c7275fa`
+- **Decimals:** 18
+- **Network:** Somnia (Chain ID: 50312)
+
+### Adding to MetaMask
+
+1. **Open MetaMask**
+2. **Switch to Somnia Network** (if not already added):
+   - Network Name: Somnia
+   - RPC URL: https://dream-rpc.somnia.network/
+   - Chain ID: 50312
+   - Currency Symbol: STT
+
+3. **Import Token:**
+   - Click on "Import tokens" at the bottom
+   - Select "Custom token"
+   - Paste contract address: `0x9f73cb87a43deae721cbf69cfb8a356e2c7275fa`
+   - Token symbol should auto-fill as "QUENCH"
+   - Decimals should auto-fill as "18"
+   - Click "Add Custom Token"
+   - Click "Import Tokens"
+
+4. **You should now see your QUENCH balance!**
+
+Every time you submit a daily record and meet the performance criteria, QUENCH tokens are minted directly to your wallet. These are real ERC-20 tokens on the Somnia blockchain.
+
 ## License
 
 MIT

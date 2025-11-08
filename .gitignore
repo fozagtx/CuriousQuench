@@ -110,3 +110,4 @@ bun-error.log*
 # --- Ignore generated static content ---
 public/assets/generated/
 public/.cache/
+contracts/
