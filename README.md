@@ -1,4 +1,5 @@
-# Curious Quench 💧
+# Curious Quench ![Logo](public/logo.png)
+
 
 A Web3 gamified app to help you quit smoking. Track your daily cigarette consumption and earn **$QUENCH** tokens based on your progress!
 
